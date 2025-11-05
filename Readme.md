@@ -25,13 +25,13 @@ Este projeto implementa um pipeline completo de **engenharia de dados** para a e
 
 ```mermaid
 flowchart LR
-    A[Fonte: API VERSALIC] --> B[Camada Bronze<br>(dados brutos em JSON)]
-    B --> C[Camada Silver<br>(dados tratados e padronizados)]
-    C --> D[Camada Gold<br>(tabelas analíticas e agregadas)]
-    C -->|Carga final| E[(PostgreSQL)]
-    F[Airflow DAGs] -.-> A
-    F -.-> B
-    F -.-> C
-    F -.-> D
-    G[Docker Compose] -.-> F
-    G -.-> E
+    A[Fonte: API VERSALIC]-->B[Camada Bronze -- dados brutos em JSON]
+    B-->C[Camada Silver -- dados tratados e padronizados ]
+    C-->D[Camada Gold -- tabelas analíticas e agregadas]
+    C-->|Carga final|E[(PostgreSQL)]
+    F[Airflow DAGs]-.->A
+    F-.->B
+    F-.->C
+    F-.->D
+    G[Docker Compose]-.->F
+    G-.->E
