@@ -12,7 +12,7 @@ def get_versalic_data(limit=100, max_pages=5):
     for page in range(max_pages):
         offset = page * limit
         resp = get_pagina(f"{base_url}?limit={limit}&offset={offset}")
-        logging.info(f"============================ Acessando página {base_url}?limit={limit}&offset={offset} ============================")
+        logging.info(f"================ Acessando página {base_url}?limit={limit}&offset={offset} ================")
         resp.raise_for_status()
         investidores = resp.json().get("_embedded", {}).get("incentivadores", [])
         all_data.extend(investidores)
